@@ -1,0 +1,17 @@
+<div id="waveform"></div>
+<div class="row">
+  <div class="col-sm-6">
+    Playlist Title
+  </div>
+  <div class="col-sm-6">
+    <app-track-search (onSearch)="loadTracks($event);"></app-track-search>
+  </div>
+</div>
+<div class="row" style="padding:10px">
+  <div class="col-sm-6">
+    <app-track-list [editButton]="false" [showDeleteButton]="true" [tracks]="plTracks" (onDelete)="deletePlaylistTrack($event);" ></app-track-list>
+  </div>
+  <div class="col-sm-6">
+    <app-track-list [editButton]="false" [showAddButton]="true" [showDeleteButton]="false" [tracks]="tracks" (onAdd)="addTrack($event);"></app-track-list>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div style="padding:10px">
+  <app-playlist-form (onCreate)="onCreatePlaylist($event);"></app-playlist-form>
+  <table class="table table-dark table-striped">
+   <thead>
+     <tr>
+       <th scope="col">#</th>
+       <th scope="col">Title</th>
+       <th scope="col">Created At</th>
+       <th scope="col">Updated At</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let playlist of playlists; let index = index">
+       <th scope="row">{{index + 1}}</th>
+       <td><a class="nav-link" [routerLink]="[playlist.id, 'tracks']">{{playlist.title}}</a></td>
+       <td>{{playlist.created_at | date: 'short'}}</td>
+       <td>{{playlist.updated_at | date: 'short'}}</td>
+       <td>
+         <button (click)="deletePlaylist(playlist.id)" class="btn btn-danger btn-sm" type="button">Delete</button>
+       </td>
+     </tr>
+   </tbody>
+  </table>
+</div>
