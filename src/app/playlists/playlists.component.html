@@ -1,4 +1,4 @@
-<div style="padding:10px">
+<!-- <div style="padding:10px">
   <app-playlist-form (onCreate)="onCreatePlaylist($event);"></app-playlist-form>
   <table class="table table-dark table-striped">
    <thead>
@@ -21,4 +21,18 @@
      </tr>
    </tbody>
   </table>
-</div>
+</div> -->
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Playlists</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list *ngFor="let playlist of playlists; let index = index">
+    <ion-item>
+      <ion-label><a class="nav-link" [routerLink]="[playlist.id, 'tracks']">{{playlist.title}}</a></ion-label>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+</ion-app>
