@@ -30,9 +30,25 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-list *ngFor="let playlist of playlists; let index = index">
-    <ion-item>
-      <ion-label><a class="nav-link" [routerLink]="[playlist.id, 'tracks']">{{playlist.title}}</a></ion-label>
-    </ion-item>
-  </ion-list>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>
+            <a class="nav-link" [routerLink]="[playlist.id, 'tracks']">{{playlist.title}}</a>
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option (click)="deletePlaylist(playlist.id)" class="btn btn-danger btn-sm" type="button" color="danger">
+          Delete
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button>
+        <ion-icon (click)="presentModal($event);" name="add">
+          <a class="nav-link" [routerLink]="['/create-playlist-modal']" routerLinkActive="active"></a>
+        </ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   </ion-content>
 </ion-app>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistAPI } from '../api';
+import { ModalController } from '@ionic/angular';
+import { CreatePlaylistModal } from '../create-playlist-modal/create-playlist-modal.component'
 
 @Component({
   selector: 'app-playlist',
@@ -9,10 +11,23 @@ import { PlaylistAPI } from '../api';
 export class PlaylistsComponent implements OnInit {
   playlists:any = [];
 
-  constructor(private playlistAPI: PlaylistAPI) { }
+  constructor(private playlistAPI: PlaylistAPI, public modalController: ModalController) { }
 
   ngOnInit(): void {
     this.loadPlaylists();
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: CreatePlaylistModal,
+      cssClass: 'my-custom-class'
+    });
+    await modal.present();
+    const { data } = await modal.onWillDismiss();
+    if (data) {
+      this.playlists.push(data);
+      console.log(data);
+    }
   }
 
   loadPlaylists() {

@@ -10,28 +10,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { ApiModule } from './api/api.module';
-import { PlaylistFormComponent } from './playlist-form/playlist-form.component';
 import { TracksComponent } from './tracks/tracks.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { TrackFormComponent } from './track-form/track-form.component';
 import { PlaylistTracksComponent } from './playlist-tracks/playlist-tracks.component';
 import { TrackSearchComponent } from './track-search/track-search.component';
 import { TrackListComponent } from './track-list/track-list.component';
+import { CreatePlaylistModal } from './create-playlist-modal/create-playlist-modal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PlaylistsComponent,
-    PlaylistFormComponent,
     TracksComponent,
-    NavbarComponent,
     TrackFormComponent,
     PlaylistTracksComponent,
     TrackSearchComponent,
-    TrackListComponent
+    TrackListComponent,
+    CreatePlaylistModal
   ],
-  entryComponents: [],
+  entryComponents: [
+    CreatePlaylistModal
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
