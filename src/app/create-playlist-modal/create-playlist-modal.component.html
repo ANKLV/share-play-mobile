@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>New playlist</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="dismiss()">
+          Close
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <form (ngSubmit)='createPlaylist();' [formGroup]='createPlaylistModal' novalidate>
+      <ion-item>
+        <ion-label>Title:</ion-label>
+        <ion-input formControlName='title' type="text" class="form-control" placeholder="Enter playlist name"></ion-input>
+      </ion-item>
+      <ion-button [disabled]='createPlaylistModal.invalid' expand="block" type="submit">Create</ion-button>
+    </form>
+  </ion-content>
+</ion-app>
