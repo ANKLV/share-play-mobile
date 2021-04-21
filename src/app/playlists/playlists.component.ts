@@ -26,7 +26,6 @@ export class PlaylistsComponent implements OnInit {
     const { data } = await modal.onWillDismiss();
     if (data) {
       this.playlists.push(data);
-      console.log(data);
     }
   }
 
