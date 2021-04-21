@@ -8,6 +8,7 @@ import { CreatePlaylistModal } from '../create-playlist-modal/create-playlist-mo
   templateUrl: './playlists.component.html',
   styleUrls: ['./playlists.component.scss']
 })
+
 export class PlaylistsComponent implements OnInit {
   playlists:any = [];
 
@@ -35,10 +36,6 @@ export class PlaylistsComponent implements OnInit {
     }, (error) => {
       console.log('error', error);
     })
-  }
-
-  onCreatePlaylist(playlist:any) {
-    this.playlists.push(playlist);
   }
 
   deletePlaylist(id: number) {

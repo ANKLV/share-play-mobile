@@ -8,6 +8,7 @@ import { PlaylistAPI } from '../api';
   templateUrl: 'create-playlist-modal.component.html',
   styleUrls: ['./create-playlist-modal.component.scss']
 })
+
 export class CreatePlaylistModal {
   createPlaylistModal = new FormGroup({
     title: new FormControl(null, Validators.required)
