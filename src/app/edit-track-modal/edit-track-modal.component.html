@@ -1,0 +1,23 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Edit track</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <form (ngSubmit)='updateTrack(track);'>
+      <ion-item>
+        <ion-input [(ngModel)]="track.name" type="text" class="form-control" placeholder="Enter track name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="track.artist" type="text" class="form-control" placeholder="Enter track artist" name="name"></ion-input>
+      </ion-item>
+      <section>
+        <ion-button expand="block" type="submit">Save</ion-button>
+        <ion-button expand="block" ion-button icon-only (click)="dismiss()">
+          Cancel
+        </ion-button>
+      </section>
+    </form>
+  </ion-content>
+</ion-app>
