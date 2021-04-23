@@ -11,16 +11,21 @@ import { AppComponent } from './app.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { ApiModule } from './api/api.module';
 import { CreatePlaylistModal } from './create-playlist-modal/create-playlist-modal.component';
-
+import { TrackListComponent } from './track-list/track-list.component';
+import { TracksComponent } from './tracks/tracks.component';
+import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlaylistsComponent,
-    CreatePlaylistModal
+    CreatePlaylistModal,
+    TracksComponent,
+    TrackListComponent,
+    EditTrackModal
   ],
   entryComponents: [
-    CreatePlaylistModal
+    CreatePlaylistModal, EditTrackModal
   ],
   imports: [
     BrowserModule,
