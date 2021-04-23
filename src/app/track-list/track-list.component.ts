@@ -32,5 +32,6 @@ export class TrackListComponent {
       cssClass: 'my-custom-class',
       componentProps: {track:track}
     });
+    await modal.present();
   }
 }
