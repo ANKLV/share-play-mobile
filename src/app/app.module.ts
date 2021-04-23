@@ -13,7 +13,6 @@ import { ApiModule } from './api/api.module';
 import { CreatePlaylistModal } from './create-playlist-modal/create-playlist-modal.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { TracksComponent } from './tracks/tracks.component';
-import { PlaylistTracksComponent } from './playlist-tracks/playlist-tracks.component';
 import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
     PlaylistsComponent,
     CreatePlaylistModal,
     TracksComponent,
-    PlaylistTracksComponent,
     TrackListComponent,
     EditTrackModal
   ],
