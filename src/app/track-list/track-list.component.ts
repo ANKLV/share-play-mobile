@@ -7,6 +7,7 @@ import { EditTrackModal } from '../edit-track-modal/edit-track-modal.component';
   templateUrl: './track-list.component.html',
   styleUrls: ['./track-list.component.scss']
 })
+
 export class TrackListComponent {
   @Output() onAdd = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
@@ -15,7 +16,6 @@ export class TrackListComponent {
   @Input() showAddButton = false;
   @Input() editButton = true;
   @Input() showDeleteButton = true;
-  wavesurfer:any;
   currentTrack:any;
 
   constructor(public modalController: ModalController) { }
@@ -32,9 +32,5 @@ export class TrackListComponent {
       cssClass: 'my-custom-class',
       componentProps: {track:track}
     });
-    await modal.present();
-    const { data } = await modal.onWillDismiss();
-    if (data) {
-    }
   }
 }

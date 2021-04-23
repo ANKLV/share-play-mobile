@@ -8,7 +8,6 @@ import { TrackAPI } from '../api';
 })
 export class TracksComponent implements OnInit {
   tracks:any = [];
-  wavesurfer:any;
 
   constructor(private trackAPI: TrackAPI) { }
 
