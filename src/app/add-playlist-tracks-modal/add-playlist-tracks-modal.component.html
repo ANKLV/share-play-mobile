@@ -1,0 +1,10 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Add tracks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <app-track-list [editButton]="false" [showAddButton]="true" [showDeleteButton]="false" [tracks]="tracks" (onAdd)="addTrack($event);"></app-track-list>
+  </ion-content>
+</ion-app>

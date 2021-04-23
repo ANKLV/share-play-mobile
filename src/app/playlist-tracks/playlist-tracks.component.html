@@ -1,0 +1,30 @@
+<!-- <div class="row">
+  <div class="col-sm-6">
+    Playlist Title
+  </div>
+  <div class="col-sm-6">
+    <app-track-search (onSearch)="loadTracks($event);"></app-track-search>
+  </div>
+</div>
+<div class="row" style="padding:10px">
+  <div class="col-sm-6">
+    <app-track-list [editButton]="false" [showDeleteButton]="true" [tracks]="plTracks" (onDelete)="deletePlaylistTrack($event);" ></app-track-list>
+  </div>
+  <div class="col-sm-6">
+    <app-track-list [editButton]="false" [showAddButton]="true" [showDeleteButton]="false" [tracks]="tracks" (onAdd)="addTrack($event);"></app-track-list>
+  </div>
+</div> -->
+
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Playlist title</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <app-track-list [editButton]="false" [showDeleteButton]="true" [tracks]="plTracks" (onDelete)="deletePlaylistTrack($event);" ></app-track-list>
+    <ion-button expand="block" (click)="addTracksModal(track);" class="btn btn-info btn-sm" type="button" color="success">
+      Add tracks
+    </ion-button>
+  </ion-content>
+</ion-app>
