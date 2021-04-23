@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TrackAPI } from '../api';
@@ -10,7 +10,7 @@ import { TrackAPI } from '../api';
 })
 
 export class EditTrackModal {
-  track:any = {};
+  @Input() track:any = {};
 
   constructor(private trackAPI: TrackAPI,
               private modalController: ModalController) { }
@@ -22,6 +22,7 @@ export class EditTrackModal {
   updateTrack(track:any) {
     this.trackAPI.update(track.id, {track}).subscribe(() => {
       track.edit = false;
+      this.modalController.dismiss(track);
     })
   }
 }

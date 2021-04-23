@@ -29,7 +29,8 @@ export class TrackListComponent {
   async editModal(track) {
     const modal = await this.modalController.create({
       component: EditTrackModal,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {track:track}
     });
     await modal.present();
     const { data } = await modal.onWillDismiss();
