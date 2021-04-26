@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { PlaylistAPI } from '../api';
 import { PlaylistTrackAPI } from '../api';
 import { TrackAPI } from '../api';
 
@@ -12,6 +13,7 @@ import { TrackAPI } from '../api';
 
 export class AddPlaylistTracksModal {
     playlistsTracks:any = [];
+    playlists:any;
     playlistId:any;
     plTracks:any = [];
     tracks:any = [];
