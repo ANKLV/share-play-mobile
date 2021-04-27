@@ -2,8 +2,7 @@ import { Component, Output, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
-import { PlaylistTrackAPI } from '../api';
-import { PlaylistAPI, TrackAPI } from '../api';
+import { PlaylistAPI, TrackAPI, PlaylistTrackAPI  } from '../api';
 import { AddPlaylistTracksModal } from '../add-playlist-tracks-modal/add-playlist-tracks-modal.component';
 
 @Component({

@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PlaylistTrackAPI } from '../api';
-import { TrackAPI } from '../api';
+import { PlaylistTrackAPI, TrackAPI  } from '../api';
 import { Toast } from "../providers"
 
 @Component({
