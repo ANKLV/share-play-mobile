@@ -46,9 +46,10 @@ export class PlaylistTracksComponent implements OnInit {
       this.playlistsTracks = data;
       this.plTracks = this.playlistsTracks.map((track:any) => track.track)
     }, (error) => {
+      console.log('error', error);
     })
   }
-
+  
   onCreatePlaylistTrack(playlistTrack:any) {
     this.playlistsTracks.push(playlistTrack);
   }
