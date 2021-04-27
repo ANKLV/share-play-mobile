@@ -1,4 +1,4 @@
-import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EditTrackModal } from '../edit-track-modal/edit-track-modal.component';
 

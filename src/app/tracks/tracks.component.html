@@ -5,6 +5,6 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <app-track-list [tracks]="tracks" (onUpdate)="updateTrack($event);" (onDelete)="deleteTrack($event);"></app-track-list>
+    <app-track-list [editButton]="true" [tracks]="tracks" (onUpdate)="updateTrack($event);" (onDelete)="deleteTrack($event);"></app-track-list>
   </ion-content>
 </ion-app>

@@ -14,6 +14,11 @@ import { CreatePlaylistModal } from './create-playlist-modal/create-playlist-mod
 import { TrackListComponent } from './track-list/track-list.component';
 import { TracksComponent } from './tracks/tracks.component';
 import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
+import { PlaylistTracksComponent } from './playlist-tracks/playlist-tracks.component';
+import { AddPlaylistTracksModal } from './add-playlist-tracks-modal/add-playlist-tracks-modal.component';
+
+import { Toast } from "./providers"
+
 
 @NgModule({
   declarations: [
@@ -22,10 +27,12 @@ import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
     CreatePlaylistModal,
     TracksComponent,
     TrackListComponent,
-    EditTrackModal
+    EditTrackModal,
+    PlaylistTracksComponent,
+    AddPlaylistTracksModal
   ],
   entryComponents: [
-    CreatePlaylistModal, EditTrackModal
+    CreatePlaylistModal, EditTrackModal, AddPlaylistTracksModal
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Toast
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
