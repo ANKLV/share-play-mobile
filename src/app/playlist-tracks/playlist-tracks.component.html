@@ -1,13 +1,15 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Playlist title</ion-title>
+      <ion-title>{{playlist.title}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <app-track-list [editButton]="false" [showDeleteButton]="true" [tracks]="plTracks" (onDelete)="deletePlaylistTrack($event);" ></app-track-list>
+  </ion-content>
+  <ion-footer>
     <ion-button expand="block" (click)="addTracksModal(track);" class="btn btn-info btn-sm" type="button" color="success">
       Add tracks
     </ion-button>
-  </ion-content>
+  </ion-footer>
 </ion-app>

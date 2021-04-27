@@ -13,7 +13,7 @@
       <ion-item-option *ngIf="editButton" (click)="editModal(track);" class="btn btn-info btn-sm" type="button" color="warning">
         Edit
       </ion-item-option>
-      <ion-item-option *ngIf="showAddButton" (click)="onAdd.emit(track); closeSlide(slidingItem);" class="btn btn-success btn-sm" type="button" color="success">
+      <ion-item-option *ngIf="showAddButton" (click)="onAdd.emit(track); slidingItem.close;" class="btn btn-success btn-sm" type="button" color="success">
         Add
       </ion-item-option>
     </ion-item-options>

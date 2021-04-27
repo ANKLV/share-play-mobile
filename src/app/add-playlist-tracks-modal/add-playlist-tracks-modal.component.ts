@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PlaylistTrackAPI } from '../api';
 import { TrackAPI } from '../api';
@@ -11,6 +11,7 @@ import { Toast } from "../providers"
 })
 
 export class AddPlaylistTracksModal {
+
     @Input() playlistId:number;
     playlistsTracks:any = [];
     playlists:any;
@@ -32,6 +33,7 @@ export class AddPlaylistTracksModal {
   }
 
   loadTracks(query?:any) {
+    console.log(query)
     const params = query ? {query: query} : {};
 
     this.trackAPI.query(params).subscribe((data) => {

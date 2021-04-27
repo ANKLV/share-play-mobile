@@ -24,4 +24,8 @@ export class PlaylistAPI {
   update(id:number, params = {}) {
     return this.http.patch(`${environment.apiEndpoint}/api/v1/playlists/${id}`, params);
   }
+
+  show(id:number, params = {}) {
+    return this.http.get(`${environment.apiEndpoint}/api/v1/playlists/${id}`, { params: params });
+  }
 }

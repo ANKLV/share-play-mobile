@@ -1,7 +1,6 @@
-import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EditTrackModal } from '../edit-track-modal/edit-track-modal.component';
-import { IonItemSliding } from '@ionic/angular';
 
 @Component({
   selector: 'app-track-list',
@@ -35,9 +34,4 @@ export class TrackListComponent {
     });
     await modal.present();
   }
-
-
-    closeSlide(slidingItem) {
-     slidingItem.close();
-   }
 }

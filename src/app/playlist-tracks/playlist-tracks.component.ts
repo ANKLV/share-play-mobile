@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
@@ -14,17 +14,18 @@ import { AddPlaylistTracksModal } from '../add-playlist-tracks-modal/add-playlis
 })
 export class PlaylistTracksComponent implements OnInit {
   playlistsTracks:any = [];
-  playlists:any = [];
   tracks:any = [];
   plTracks:any = [];
+  playlist:any = {};
   playlistId:any;
 
-  constructor(private playlistTrackAPI: PlaylistTrackAPI, private trackAPI: TrackAPI, private route: ActivatedRoute, public modalController: ModalController) { }
+  constructor(private playlistTrackAPI: PlaylistTrackAPI, private trackAPI: TrackAPI, private route: ActivatedRoute, public modalController: ModalController, private playlistAPI: PlaylistAPI) { }
 
   ngOnInit(): void {
     this.playlistId = this.route.snapshot.paramMap.get('id');
     this.loadPlaylistTracks(this.playlistId);
     this.loadTracks();
+    this.loadPlaylist(this.playlist);
   }
 
   async addTracksModal(playlistId) {
@@ -78,6 +79,12 @@ export class PlaylistTracksComponent implements OnInit {
       this.tracks = data;
     }, (error) => {
       console.log('error', error);
+    })
+  }
+
+  loadPlaylist(playlist:any) {
+    this.playlistAPI.show(this.playlistId).subscribe((data) => {
+      this.playlist = data;
     })
   }
 }
