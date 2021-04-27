@@ -45,7 +45,6 @@ export class PlaylistTracksComponent implements OnInit {
     this.playlistTrackAPI.query({playlist_id: playlistId}).subscribe((data) => {
       this.playlistsTracks = data;
       this.plTracks = this.playlistsTracks.map((track:any) => track.track)
-      console.log('error', data);
     }, (error) => {
     })
   }
@@ -59,10 +58,10 @@ export class PlaylistTracksComponent implements OnInit {
 
     if (confirm("Are you sure?"))
       this.playlistTrackAPI.delete(playlistTrack.id).subscribe(() => {
-      this.playlistsTracks = this.playlistsTracks.filter((data:any) => data.id !== playlistTrack.id);
-      this.plTracks = this.playlistsTracks.map((track:any) => track.track);
+        this.playlistsTracks = this.playlistsTracks.filter((data:any) => data.id !== playlistTrack.id);
+        this.plTracks = this.playlistsTracks.map((track:any) => track.track);
       }, (error) => {
-      console.log('error', error)
+        console.log('error', error)
     })
   }
 
