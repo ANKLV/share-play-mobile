@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PlaylistAPI } from '../api';
 import { PlaylistTrackAPI } from '../api';
 import { TrackAPI } from '../api';
+import { Toast } from "../providers"
 
 @Component({
   selector: 'app-add-playlist-tracks-modal',
@@ -12,25 +11,24 @@ import { TrackAPI } from '../api';
 })
 
 export class AddPlaylistTracksModal {
+    @Input() playlistId:number;
     playlistsTracks:any = [];
     playlists:any;
-    playlistId:any;
     plTracks:any = [];
     tracks:any = [];
 
   constructor(private playlistTrackAPI: PlaylistTrackAPI,
               private modalController: ModalController,
               private trackAPI: TrackAPI,
-              private route: ActivatedRoute
-            ) { }
+              private toast: Toast) { }
 
   ngOnInit(): void {
-    this.playlistId = this.route.snapshot.paramMap.get('id');
     this.loadTracks();
   }
 
   dismiss(data?:any) {
     this.modalController.dismiss(data);
+    this.loadTracks();
   }
 
   loadTracks(query?:any) {
@@ -45,8 +43,9 @@ export class AddPlaylistTracksModal {
 
   addTrack(track:any) {
     this.playlistTrackAPI.create({playlist_track: {track_id: track.id, playlist_id: this.playlistId }}).subscribe((data:any) => {
-    this.playlistsTracks.push(data);
-    this.plTracks.push(data.track);
+      this.playlistsTracks.push(data);
+      this.plTracks.push(data.track);
+      this.toast.show('Added!');
     })
   }
 }

@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item-sliding *ngFor="let track of tracks; let index = index">
+  <ion-item-sliding *ngFor="let track of tracks; let index = index" #slidingItem>
     <ion-item>
       <ion-label>
         <h2>{{track.name}}</h2>
@@ -13,7 +13,7 @@
       <ion-item-option *ngIf="editButton" (click)="editModal(track);" class="btn btn-info btn-sm" type="button" color="warning">
         Edit
       </ion-item-option>
-      <ion-item-option *ngIf="showAddButton" (click)="onAdd.emit(track)" class="btn btn-success btn-sm" type="button" color="success">
+      <ion-item-option *ngIf="showAddButton" (click)="onAdd.emit(track); closeSlide(slidingItem);" class="btn btn-success btn-sm" type="button" color="success">
         Add
       </ion-item-option>
     </ion-item-options>

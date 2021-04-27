@@ -27,10 +27,11 @@ export class PlaylistTracksComponent implements OnInit {
     this.loadTracks();
   }
 
-  async addTracksModal() {
+  async addTracksModal(playlistId) {
     const modal = await this.modalController.create({
       component: AddPlaylistTracksModal,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {playlistId: this.playlistId}
     });
     await modal.present();
     const { data } = await modal.onWillDismiss();

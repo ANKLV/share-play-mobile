@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TrackAPI } from '../api';
 
 @Component({

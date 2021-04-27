@@ -6,5 +6,8 @@
   </ion-header>
   <ion-content class="ion-padding">
     <app-track-list [editButton]="false" [showAddButton]="true" [showDeleteButton]="false" [tracks]="tracks" (onAdd)="addTrack($event);"></app-track-list>
+    <ion-button expand="block" ion-button icon-only (click)="dismiss();">
+      Close
+    </ion-button>
   </ion-content>
 </ion-app>
