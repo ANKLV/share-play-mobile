@@ -33,7 +33,6 @@ export class AddPlaylistTracksModal {
   }
 
   loadTracks(query?:any) {
-    console.log(query)
     const params = query ? {query: query} : {};
 
     this.trackAPI.query(params).subscribe((data) => {
