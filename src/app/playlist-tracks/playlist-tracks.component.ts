@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
 import { PlaylistTrackAPI } from '../api';
-import { PlaylistAPI } from '../api';
-import { TrackAPI } from '../api';
+import { PlaylistAPI, TrackAPI } from '../api';
 import { AddPlaylistTracksModal } from '../add-playlist-tracks-modal/add-playlist-tracks-modal.component';
 
 @Component({
@@ -49,7 +48,7 @@ export class PlaylistTracksComponent implements OnInit {
       console.log('error', error);
     })
   }
-  
+
   onCreatePlaylistTrack(playlistTrack:any) {
     this.playlistsTracks.push(playlistTrack);
   }
