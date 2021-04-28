@@ -1,5 +1,7 @@
 {
   "name": "share-play-mobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
