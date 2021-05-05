@@ -4,7 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { CreatePlaylistModal } from '../create-playlist-modal/create-playlist-modal.component'
 
 @Component({
-  selector: 'app-playlist',
+  selector: 'app-playlists',
   templateUrl: './playlists.component.html',
   styleUrls: ['./playlists.component.scss']
 })

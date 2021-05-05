@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TrackAPI } from '../api';
 
 @Component({
-  selector: 'app-track',
+  selector: 'app-tracks',
   templateUrl: './tracks.component.html',
   styleUrls: ['./tracks.component.scss']
 })

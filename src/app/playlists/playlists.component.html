@@ -19,12 +19,12 @@
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button>
-        <ion-icon (click)="presentModal($event);" name="add">
-          <a class="nav-link" [routerLink]="['/create-playlist-modal']" routerLinkActive="active"></a>
-        </ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+      <ion-fab vertical="center" horizontal="center" slot="fixed">
+        <ion-fab-button>
+          <ion-icon (click)="presentModal($event);" name="add">
+            <a class="nav-link" [routerLink]="['/create-playlist-modal']" routerLinkActive="active"></a>
+          </ion-icon>
+        </ion-fab-button>
+      </ion-fab>
   </ion-content>
 </ion-app>

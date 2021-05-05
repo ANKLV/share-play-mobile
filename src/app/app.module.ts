@@ -16,7 +16,10 @@ import { TracksComponent } from './tracks/tracks.component';
 import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
 import { PlaylistTracksComponent } from './playlist-tracks/playlist-tracks.component';
 import { AddPlaylistTracksModal } from './add-playlist-tracks-modal/add-playlist-tracks-modal.component';
-
+import { TabsPage } from './tabs/tabs.page';
+import { Tab1Page } from './tab1/tab1.page';
+import { Tab2Page } from './tab2/tab2.page';
+import { Tab3Page } from './tab3/tab3.page';
 import { Toast } from "./providers"
 
 
@@ -29,7 +32,11 @@ import { Toast } from "./providers"
     TrackListComponent,
     EditTrackModal,
     PlaylistTracksComponent,
-    AddPlaylistTracksModal
+    AddPlaylistTracksModal,
+    TabsPage,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page
   ],
   entryComponents: [
     CreatePlaylistModal, EditTrackModal, AddPlaylistTracksModal
