@@ -1,6 +1,7 @@
 import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EditTrackModal } from '../edit-track-modal/edit-track-modal.component';
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
 @Component({
   selector: 'app-track-list',
@@ -18,7 +19,7 @@ export class TrackListComponent {
   @Input() showDeleteButton = true;
   currentTrack:any;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private streamingMedia: StreamingMedia) { }
 
   get currentTrackIndex() {
     return this.tracks.map((track:any) => track.id).indexOf(this.currentTrack.id);
@@ -34,4 +35,13 @@ export class TrackListComponent {
     });
     await modal.present();
   }
+
+  play(track:any) {
+    let options:any = {
+      orientation: 'landscape',
+      shouldAutoClose: true
+    };
+
+    this.streamingMedia.playAudio(track.url, options);
+  };
 }

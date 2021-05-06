@@ -8,7 +8,7 @@
     <app-track-list [editButton]="false" [showDeleteButton]="true" [tracks]="plTracks" (onDelete)="deletePlaylistTrack($event);" ></app-track-list>
   </ion-content>
   <ion-footer>
-    <ion-button expand="block" (click)="addTracksModal(track);" class="btn btn-info btn-sm" type="button" color="success">
+    <ion-button expand="block" (click)="addTracksModal();" class="btn btn-info btn-sm" type="button" color="success">
       Add tracks
     </ion-button>
   </ion-footer>

@@ -48,4 +48,8 @@ export class AddPlaylistTracksModal {
       this.toast.show('Added!');
     })
   }
+
+  search(event:any) {
+    this.loadTracks(event.target.value);
+  }
 }

@@ -22,6 +22,7 @@ import { Tab2Page } from './tab2/tab2.page';
 import { Tab3Page } from './tab3/tab3.page';
 import { Toast } from "./providers"
 
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { Toast } from "./providers"
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Toast
+    Toast, StreamingMedia
   ],
   bootstrap: [AppComponent],
 })
