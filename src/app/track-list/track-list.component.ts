@@ -38,7 +38,12 @@ export class TrackListComponent {
   }
 
   play(track:any) {
-    this.streamingMedia.playAudio(track.url);
+    let options:any = {
+      orientation: 'landscape',
+      shouldAutoClose: true,
+    };
+
+    this.streamingMedia.playAudio(track.url, options);
         console.log(track);
        (err) => {
         console.log(err)
