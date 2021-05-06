@@ -24,7 +24,6 @@ import { Toast } from "./providers"
 
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
-
 @NgModule({
   declarations: [
     AppComponent,

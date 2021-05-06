@@ -25,8 +25,7 @@ export class TrackListComponent {
     return this.tracks.map((track:any) => track.id).indexOf(this.currentTrack.id);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   async editModal(track) {
     const modal = await this.modalController.create({
@@ -47,6 +46,6 @@ export class TrackListComponent {
         console.log(track);
        (err) => {
         console.log(err)
-      };
+    };
   }
 }
