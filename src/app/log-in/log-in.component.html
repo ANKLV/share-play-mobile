@@ -1,0 +1,15 @@
+<div class="input-group mb-3" style="width:300px; margin: auto;">
+  <form (ngSubmit)='loginUser();' [formGroup]='loginForm' novalidate>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input formControlName='email' type="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input formControlName='password' type="password" class="form-control">
+    </div>
+    <div class="input-group-append">
+      <button [disabled]='loginForm.invalid' class="btn btn-success btn-sm" type="submit">Log In</button>
+    </div>
+  </form>
+</div>

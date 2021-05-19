@@ -16,11 +16,15 @@ import { TracksComponent } from './tracks/tracks.component';
 import { EditTrackModal } from './edit-track-modal/edit-track-modal.component';
 import { PlaylistTracksComponent } from './playlist-tracks/playlist-tracks.component';
 import { AddPlaylistTracksModal } from './add-playlist-tracks-modal/add-playlist-tracks-modal.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LogInComponent } from './log-in/log-in.component';
 import { TabsPage } from './tabs/tabs.page';
 import { Tab1Page } from './tab1/tab1.page';
 import { Tab2Page } from './tab2/tab2.page';
 import { Tab3Page } from './tab3/tab3.page';
 import { Toast } from "./providers"
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor, ErrorInterceptor } from './providers';
 
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
@@ -34,6 +38,8 @@ import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
     EditTrackModal,
     PlaylistTracksComponent,
     AddPlaylistTracksModal,
+    SignUpComponent,
+    LogInComponent,
     TabsPage,
     Tab1Page,
     Tab2Page,
@@ -52,7 +58,17 @@ import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
     ReactiveFormsModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },{
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+      },
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: ErrorInterceptor,
+        multi: true
+      },
+
     Toast, StreamingMedia
   ],
   bootstrap: [AppComponent],
