@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrackAPI } from '../api';
+import { Router } from '@angular/router';
+import { Auth } from "../providers"
 
 @Component({
   selector: 'app-tracks',
@@ -9,7 +11,7 @@ import { TrackAPI } from '../api';
 export class TracksComponent implements OnInit {
   tracks:any = [];
 
-  constructor(private trackAPI: TrackAPI) { }
+  constructor(private trackAPI: TrackAPI, public auth: Auth, private router: Router) { }
 
     ngOnInit(): void {
       this.loadTracks();
@@ -34,5 +36,10 @@ export class TracksComponent implements OnInit {
         }, (error) => {
         console.log('error', error)
       })
+    }
+
+    logOut() {
+      this.auth.signOut();
+      this.router.navigate(['/tabs/tab1']);
     }
   }

@@ -1,15 +1,20 @@
-<div class="input-group mb-3" style="width:300px; margin: auto;">
-  <form (ngSubmit)='loginUser();' [formGroup]='loginForm' novalidate>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input formControlName='email' type="email" class="form-control" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input formControlName='password' type="password" class="form-control">
-    </div>
-    <div class="input-group-append">
-      <button [disabled]='loginForm.invalid' class="btn btn-success btn-sm" type="submit">Log In</button>
-    </div>
-  </form>
-</div>
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Log In</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+      <form (ngSubmit)='loginUser();' [formGroup]='loginForm' novalidate>
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName='email' type="email" class="form-control" placeholder="name@example.com"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName='password' type="password" class="form-control"></ion-input>
+        </ion-item>
+        <ion-button [disabled]='loginForm.invalid' expand="block" color="primary" type="submit">Log In</ion-button>
+      </form>
+  </ion-content>
+</ion-app>

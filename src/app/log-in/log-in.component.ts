@@ -20,11 +20,11 @@ export class LogInComponent {
 
   loginUser() {
     this.sessionAPI.create(this.loginForm.value).subscribe((data) => {
-      // this.toast.success("Logged In");
+      this.toast.show("Logged In");
       this.auth.updateUser(data);
-      this.router.navigate(['/playlists']);
+      this.router.navigate(['/tabs/tab2']);
     }, (error) => {
-      // this.toast.showResponseErrors(error)
+      this.toast.show(error)
     })
   }
 

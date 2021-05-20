@@ -22,12 +22,12 @@ export class SignUpComponent {
 
   createUser() {
     this.userAPI.create({user: this.userForm.value}).subscribe((data) => {
-      // this.toast.success("Registered");
+      this.toast.show("Registered");
       this.auth.updateUser(data);
-      this.router.navigate(['/playlists']);
+      this.router.navigate(['/tabs/tab2']);
     }, (error) => {
       console.log('error', error);
-      // this.toast.showResponseErrors(error)
+      this.toast.show(error)
     })
   }
 }
