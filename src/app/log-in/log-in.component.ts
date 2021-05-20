@@ -24,7 +24,8 @@ export class LogInComponent {
       this.auth.updateUser(data);
       this.router.navigate(['/tabs/tab2']);
     }, (error) => {
-      this.toast.show(error)
+      console.log('error', error);
+      this.toast.show("Invalid credentials")
     })
   }
 

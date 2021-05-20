@@ -27,7 +27,7 @@ export class SignUpComponent {
       this.router.navigate(['/tabs/tab2']);
     }, (error) => {
       console.log('error', error);
-      this.toast.show(error)
+      this.toast.show("Invalid credentials")
     })
   }
 }
