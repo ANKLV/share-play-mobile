@@ -19,7 +19,7 @@
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
-      <ion-fab vertical="center" horizontal="center" slot="fixed">
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
         <ion-fab-button>
           <ion-icon (click)="presentModal();" name="add">
             <a class="nav-link" [routerLink]="['/create-playlist-modal']" routerLinkActive="active"></a>
@@ -27,4 +27,14 @@
         </ion-fab-button>
       </ion-fab>
   </ion-content>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/tabs/tab1']">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+      <ion-label>Tracks</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/tabs/tab2']">
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-label>Playlists</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
 </ion-app>

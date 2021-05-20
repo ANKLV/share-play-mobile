@@ -25,16 +25,14 @@
         <ion-button [disabled]='userForm.invalid' expand="block" type="submit">Register</ion-button>
     </form>
   </ion-content>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button [routerLink]="['/tabs/tab1']">
-        <ion-icon name="musical-notes-outline"></ion-icon>
-        <ion-label>Tracks</ion-label>
-      </ion-tab-button>
-      <ion-tab-button [routerLink]="['/tabs/tab2']">
-  <ion-icon name="menu-outline"></ion-icon>
-        <ion-label>Playlists</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/tabs/tab1']">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+      <ion-label>Tracks</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/tabs/tab2']">
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-label>Playlists</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>  
 </ion-app>
