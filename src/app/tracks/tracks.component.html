@@ -1,8 +1,18 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
+        <br>
       <ion-title>Tracks</ion-title>
     </ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-button *ngIf="!auth.currentUser" [routerLink]="['/sign-up']" size="small" expand="block" color="primary">Sign Up</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button *ngIf="!auth.currentUser" [routerLink]="['/log-in']" size="small" expand="block" color="primary">Log In</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-button *ngIf="auth.currentUser" (click)="logOut()" size="small" expand="block" color="primary">Log Out</ion-button>
   </ion-header>
   <ion-content class="ion-padding">
     <app-track-list [editButton]="true" [tracks]="tracks" (onDelete)="deleteTrack($event);"></app-track-list>
