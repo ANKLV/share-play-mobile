@@ -23,6 +23,7 @@
           <ion-input formControlName='password_confirmation' type="password" class="form-control"></ion-input>
       </ion-item>
         <ion-button [disabled]='userForm.invalid' expand="block" type="submit">Register</ion-button>
+        <ion-button [routerLink]="['/tabs/tab1']" expand="block" color="primary">Cancel</ion-button>
     </form>
   </ion-content>
 </ion-app>

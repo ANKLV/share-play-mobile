@@ -15,6 +15,7 @@
             <ion-input formControlName='password' type="password" class="form-control"></ion-input>
         </ion-item>
         <ion-button [disabled]='loginForm.invalid' expand="block" color="primary" type="submit">Log In</ion-button>
+        <ion-button [routerLink]="['/tabs/tab1']" expand="block" color="primary">Cancel</ion-button>
       </form>
   </ion-content>
 </ion-app>
